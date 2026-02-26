@@ -1,18 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <script type="module">
-  import { RoaringBitmap32, roaringLibraryInitialize } from './roaring-wasm/browser/index.mjs';
-
-  async function start() {
-    // You still need to point to the .wasm file correctly
-    await roaringLibraryInitialize({ wasmUrl: './roaring-wasm/index.wasm' });
-    const bitmap = new RoaringBitmap32();
-    bitmap.add(123);
-    console.log("Bitmap contains 123:", bitmap.has(123));
-  }
-  start();
-</script>
 <a href="SingleFile.html">SingleFile Version</a>
+<a href="multFile.html">MultFile Version</a>
 </body>
 </html>
