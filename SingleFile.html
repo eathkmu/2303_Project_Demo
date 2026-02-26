@@ -8,17 +8,17 @@
     const manifest = {
       name: "Roaring Wasm App",
       short_name: "Roaring",
-      start_url: "./index.html",
+      start_url: window.location.href, // Use full current URL
       display: "standalone",
       background_color: "#ffffff",
       theme_color: "#000000",
       icons: [{
-        src: "./test.png",
+        // Create an absolute URL based on your current location
+        src: new URL('./test.png', window.location.href).href,
         sizes: "192x192",
         type: "image/png",
-        purpose: "any maskable" // This helps the icon look good on Android
+        purpose: "any maskable"
       }]
-
     };
     const manifestBlob = new Blob([JSON.stringify(manifest)], { type: 'application/json' });
     const manifestURL = URL.createObjectURL(manifestBlob);
